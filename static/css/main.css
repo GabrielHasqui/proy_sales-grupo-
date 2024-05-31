@@ -1,0 +1,354 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    color: #0077b6; /* Cambiado a azul cálido */
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: #0077b6; /* Cambiado a azul cálido */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(to right, #0077b6, #60a3bc); /* Cambiado a azul cálido */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos del encabezado */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #0037b6, #459bba); /* Cambiado a azul cálido */
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+/* Estilos para la imagen del logo */
+#header-logo {
+    height: 50px; /* Ajusta la altura según sea necesario */
+    width: auto; /* Mantén la proporción */
+    display: block; /* Hace que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Estilos del contenedor principal */
+#container {
+    display: flex;
+    margin-top: 60px; /* Altura del header */
+}
+
+/* Estilos del menú vertical */
+#sidebar {
+    width: 150px; /* Ajustado para ser menos grueso */
+    background-color: #0077b6; /* Cambiado a azul cálido */
+    padding: 10px 5px; /* Reducción del padding para ocupar menos espacio */
+    height: calc(100vh - 60px); /* Ajuste según el alto del header */
+    position: fixed;
+    top: 43px; /* Ajuste según el alto del header */
+    left: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añadido para delimitar mejor */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 5;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos de contenido principal */
+#content {
+    margin-left: 170px; /* Ajuste según el ancho del sidebar */
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff; /* Fondo blanco para delimitar mejor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para delimitar mejor */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .welcome {
+        margin-right: 10px;
+    }
+
+    #sidebar {
+        width: 120px; /* Más pequeño en dispositivos móviles */
+        padding: 10px 5px;
+    }
+
+    #content {
+        margin-left: 140px; /* Ajuste según el ancho del sidebar */
+        padding: 15px;
+    }
+
+    .menu li a {
+        padding: 8px 10px;
+    }
+}
+
+/* Estilos de la tabla */
+.table-container {
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+}
+
+.styled-table thead tr {
+    background: #0077b6; /* Cambiado a azul cálido */
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0077b6; /* Cambiado a azul cálido */
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #0077b6; /* Cambiado a azul cálido */
+}
+
+/* Estilos para los errores del formulario */
+.form-errors {
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    background-color: #f8d7da;
+    color: #721c24;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.form-errors li {
+    margin-bottom: 5px;
+}
+
+/* Estilos del formulario */
+.container {
+    margin: 10px 20px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus {
+    border-color: #0077b6; /* Cambiado a azul cálido */
+    outline: none;
+}
+
+.btn {
+    height: 40px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.blue {
+    background-color: #0077b6; /* Cambiado a azul cálido */
+    color: #fff;
+}
+
+.red {
+    background-color: #ea5959;
+    color: #fff;
+}
+
+.btn.blue:hover {
+    background-color: #1a6c8a; /* Cambiado a azul cálido */
+}
+
+.btn.red:hover {
+    background-color: #901921;
+}
+
+/* Estilos específicos para los formularios de registro e inicio de sesión */
+.auth-form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 20px; /* Añadido para margen superior */
+}
+
+.auth-form-container h1 {
+    color: #0077b6; /* Cambiado a azul cálido */
+    text-align: center; /* Centrado del título */
+}
+
+.auth-form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.auth-form-group input[type="text"],
+.auth-form-group input[type="password"],
+.auth-form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.auth-form-group input[type="text"]:focus,
+.auth-form-group input[type="password"]:focus,
+.auth-form-group select:focus {
+    border-color: #0077b6; /* Cambiado a azul cálido */
+    outline: none;
+}
+
+.auth-btn {
+    height: 40px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Añadido para que el botón sea bloque */
+    width: 100%; /* Añadido para que el botón ocupe todo el ancho */
+}
+
+.auth-btn.blue {
+    background-color: #0077b6; /* Cambiado a azul cálido */
+    color: #fff;
+}
+
+.auth-btn.blue:hover {
+    background-color: #1a6c8a; /* Cambiado a azul cálido */
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="form-container">
+        <h1 class="title">{{ title }}</h1>
+        <p>¿Estás seguro de que deseas eliminar la marca <strong>{{ brand.description }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn red">Eliminar</button>
+            <a class="btn blue" href="{% url 'core:brands_list' %}">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="table-container">
+      <br>
+      <h1 class="title">{{ title2 }}</h1>
+      {% if brands %}
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for brand in brands %}
+            <tr>
+              <td>{{ brand.description }}</td> <!-- Corregido aquí -->
+              <td>
+                {% if brand.state %}
+                <i class="bi bi-toggle-on" style="color: green; font-size: 29px;"></i>
+                {% else %}
+                <i class="bi bi-toggle-off" style="font-size: 29px;"></i>
+                {% endif %}
+              </td>
+              <td>
+                <a href="{% url 'core:brands_update' brand.id %}"><i class="bi bi-pencil" style="font-size: 27px; color: green;"></i></a>
+                <a href="{% url 'core:brands_delete' brand.id %}"><i class="bi bi-x-circle" style="font-size: 27px; color: red;"></i></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <h2  style="display: flex; justify-content: center; color: crimson;">No hay marcas</h2>
+      {% endif %}
+      <div class="form-group">
+        <a class="btn blue" href="{% url 'core:brands_create' %}">Nueva Marca</a>
+      </div>
+    </div>
+{% endblock content  %}
+
+

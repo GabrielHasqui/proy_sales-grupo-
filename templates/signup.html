@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="auth-form-container">
+    <form method="POST">
+        <h1>Registrarse</h1>
+        {% if error %}
+            <div class="form-errors">
+                {{ error }}
+            </div>
+        {% endif %}
+        {% csrf_token %}
+        <div class="auth-form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div class="auth-form-group">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+            <input type="checkbox" id="show-password1" onclick="togglePassword('id_password1')"> Mostrar contraseña
+        </div>
+        <div class="auth-form-group">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            <input type="checkbox" id="show-password2" onclick="togglePassword('id_password2')"> Mostrar contraseña
+        </div>
+        <button class="auth-btn blue">
+            Registrar
+        </button>
+    </form>
+</div>
+
+<script>
+function togglePassword(fieldId) {
+    var field = document.getElementById(fieldId);
+    if (field.type === "password") {
+        field.type = "text";
+    } else {
+        field.type = "password";
+    }
+}
+</script>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
