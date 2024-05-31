@@ -8,11 +8,13 @@ from core.models import Product, Category, Brand, Supplier
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-   data = {
-        "title1":"Autor | TeacherCode",
-        "title2":"Super Mercado Economico"
-   }
-   return render(request,'core/home.html',data)
+    products = Product.objects.all()  # Obtenemos todos los productos
+    data = {
+        "title1": "Home",
+        "title2": "Super Mercado Economico",
+        "products": products,  # Incluimos los productos en el contexto
+    }
+    return render(request, 'core/home.html', data)
 
 def signup(request):
 

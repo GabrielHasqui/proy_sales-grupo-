@@ -1,4 +1,66 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-  <h1 style="text-align: center;">UNEMI HOME</h1>
-{% endblock content  %}
+<div class="container">
+  {% if user.is_authenticated %}
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Super Mercado Unemi</h1>
+            <p>Tu mejor opción para encontrar productos frescos, de calidad y a precios accesibles.</p>
+            <a href="{% url 'core:product_list' %}" class="btn btn-primary">Ver Productos</a>
+        </div>
+        <div class="hero-image">
+            <img id="hero-image" src="{% static 'img/atun.jpg' %}" alt="Imagen de productos frescos">
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Productos Destacados</h2>
+        <div class="product-grid">
+            {% for product in products|slice:":5" %}
+                <div class="product-card">
+                    <img src="{{ product.image.url }}" alt="{{ product.description }}">
+                    <div class="product-details">
+                        <h3>{{ product.name }}</h3>
+                        <p>Precio: ${{ product.price }}</p>
+                        <p>Descripción: {{ product.description }}</p>
+                        <p>Categoría: {{ product.category.name }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="about-us">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un supermercado comprometido con ofrecer productos de calidad a precios justos. Nuestra misión es ser la primera opción para las familias ecuatorianas que buscan ahorrar sin sacrificar la calidad.</p>
+    </section>
+  {% else %}
+    <section class="welcome">
+        <h2>¡Bienvenido a Super Mercado Unemi!</h2>
+        <p>Por favor, inicia sesión o regístrate para acceder a nuestros productos y servicios.</p>
+    </section>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var images = [
+      "{% static 'img/atun.jpg' %}",
+      "{% static 'img/jamon.jpg' %}",
+      "{% static 'img/cocacola.jpg' %}"
+    ];
+
+    var currentIndex = 0;
+    var heroImage = document.getElementById('hero-image');
+
+    setInterval(function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      heroImage.src = images[currentIndex];
+    }, 5000); // Cambia de imagen cada 5 segundos
+  });
+</script>
+{% endblock content %}
+{% block extra_css %}
+{% endblock extra_css %}
