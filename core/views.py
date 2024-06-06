@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from core.forms import ProductForm, CategoryForm, BrandForm, SupplierForm
 from core.models import Product, Category, Brand, Supplier
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def home(request):
     products = Product.objects.all()  # Obtenemos todos los productos
@@ -171,7 +172,7 @@ def supplier_List(request):
 #crear un proveedor
 @login_required
 def suppliers_create(request):
-    data = {'title1': 'Proveedores','title2': 'Ingreso de proveedores'}
+    data = {'title1': 'Proveedores', 'title2': 'Ingreso de proveedores'}
 
     if request.method == 'POST':
         form = SupplierForm(request.POST, request.FILES)
@@ -179,10 +180,16 @@ def suppliers_create(request):
             supplier = form.save(commit=False)
             supplier.user = request.user
             supplier.save()
+            messages.success(request, 'Proveedor creado correctamente')
             return redirect('core:suppliers_list')
-    else:
-        data['form'] = SupplierForm() # controles formulario sin datos
+        else:
+            messages.error(request, 'Error al crear el proveedor. Verifique los datos ingresados')
+            for field, error in form.errors.items():
+                messages.error(request, f'{field}: {error}')
+    else:  # Aquí se define form en el caso de una solicitud GET
+        form = SupplierForm()
 
+    data['form'] = form  # Se asegura de que form esté definida antes de pasarla a la plantilla
     return render(request, 'core/suppliers/form.html', data)
 
 #editar un proveedor

@@ -9,7 +9,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    color: #0077b6; /* Cambiado a azul cálido */
+    color: #0077b6; /* Azul cálido */
 }
 
 p {
@@ -17,7 +17,7 @@ p {
 }
 
 a {
-    color: #0077b6; /* Cambiado a azul cálido */
+    color: #0077b6; /* Azul cálido */
     text-decoration: none;
 }
 
@@ -28,7 +28,7 @@ a:hover {
 .title {
     font-size: 2em;
     font-weight: bold;
-    background: linear-gradient(to right, #0077b6, #60a3bc); /* Cambiado a azul cálido */
+    background: linear-gradient(to right, #0077b6, #60a3bc); /* Azul cálido */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -41,7 +41,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #0037b6, #459bba); /* Cambiado a azul cálido */
+    background: linear-gradient(to right, #0037b6, #459bba); /* Azul cálido */
     padding: 10px;
     color: #fff;
     width: 100%;
@@ -85,7 +85,7 @@ a:hover {
 /* Estilos del menú vertical */
 #sidebar {
     width: 150px; /* Ajustado para ser menos grueso */
-    background-color: #0077b6; /* Cambiado a azul cálido */
+    background-color: #0077b6; /* Azul cálido */
     padding: 10px 5px; /* Reducción del padding para ocupar menos espacio */
     height: calc(100vh - 60px); /* Ajuste según el alto del header */
     position: fixed;
@@ -167,7 +167,7 @@ a:hover {
 }
 
 .styled-table thead tr {
-    background: #0077b6; /* Cambiado a azul cálido */
+    background: #0077b6; /* Azul cálido */
     color: #ffffff;
     text-align: left;
 }
@@ -186,39 +186,15 @@ a:hover {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #0077b6; /* Cambiado a azul cálido */
+    border-bottom: 2px solid #0077b6; /* Azul cálido */
 }
 
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #0077b6; /* Cambiado a azul cálido */
+    color: #0077b6; /* Azul cálido */
 }
 
-/* Estilos para los errores del formulario */
-.form-errors {
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #dc3545;
-    border-radius: 8px;
-    background-color: #f8d7da;
-    color: #721c24;
-    max-width: 600px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.form-errors ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.form-errors li {
-    margin-bottom: 5px;
-}
-
-/* Estilos del formulario */
+/* Estilos específicos para los formularios */
 .container {
     margin: 10px 20px;
 }
@@ -256,7 +232,7 @@ a:hover {
 .form-group input[type="text"]:focus,
 .form-group input[type="password"]:focus,
 .form-group select:focus {
-    border-color: #0077b6; /* Cambiado a azul cálido */
+    border-color: #0077b6; /* Azul cálido */
     outline: none;
 }
 
@@ -271,7 +247,7 @@ a:hover {
 }
 
 .blue {
-    background-color: #0077b6; /* Cambiado a azul cálido */
+    background-color: #0077b6; /* Azul cálido */
     color: #fff;
 }
 
@@ -281,11 +257,54 @@ a:hover {
 }
 
 .btn.blue:hover {
-    background-color: #1a6c8a; /* Cambiado a azul cálido */
+    background-color: #1a6c8a; /* Azul cálido */
 }
 
 .btn.red:hover {
     background-color: #901921;
+}
+
+/* Estilos para los errores del formulario */
+.form-errors {
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    background-color: #f8d7da;
+    color: #721c24;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.form-errors li {
+    margin-bottom: 5px;
+}
+
+.form-group.has-error label {
+    color: #dc3545;
+}
+
+.field-errors {
+    margin-top: 5px;
+}
+
+.field-errors .errorlist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #dc3545;
+}
+
+.field-errors .errorlist li {
+    margin-left: 0;
 }
 
 /* Estilos específicos para los formularios de registro e inicio de sesión */
@@ -301,7 +320,7 @@ a:hover {
 }
 
 .auth-form-container h1 {
-    color: #0077b6; /* Cambiado a azul cálido */
+    color: #0077b6; /* Azul cálido */
     text-align: center; /* Centrado del título */
 }
 
@@ -323,32 +342,4 @@ a:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s;
-}
-
-.auth-form-group input[type="text"]:focus,
-.auth-form-group input[type="password"]:focus,
-.auth-form-group select:focus {
-    border-color: #0077b6; /* Cambiado a azul cálido */
-    outline: none;
-}
-
-.auth-btn {
-    height: 40px;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block; /* Añadido para que el botón sea bloque */
-    width: 100%; /* Añadido para que el botón ocupe todo el ancho */
-}
-
-.auth-btn.blue {
-    background-color: #0077b6; /* Cambiado a azul cálido */
-    color: #fff;
-}
-
-.auth-btn.blue:hover {
-    background-color: #1a6c8a; /* Cambiado a azul cálido */
 }
